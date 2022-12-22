@@ -1,5 +1,12 @@
-import '../styles/globals.css'
+import { ThemeProvider } from "styled-components"
+import { light } from "./../styles/theme"
+import GlobalStyles from "../styles/globalStyles"
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <ThemeProvider theme={light}>
+      <GlobalStyles />
+      <Component {...pageProps} />
+    </ThemeProvider>
+  )
 }
